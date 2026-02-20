@@ -1,8 +1,6 @@
-agent_name = "Gemini"
+battery = 70
 
-skills = ["Python", "Java", "C++", "JavaScript", "Ruby"]
-
-print(f"----{agent_name} 가동중----")
-
-for s in skills:
-    print(f"에이전트가 {s} 기술을 배웠어요.")
+if battery < 100:
+    print("배터리 충전 중...")
+else:
+    print(f"배터리 충전 완료! 배터리 충전량: {battery}%")
