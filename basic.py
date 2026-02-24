@@ -15,6 +15,7 @@ latest_quake = data['features'][0]['properties']
 
 place = latest_quake['place']
 mag = latest_quake['mag']
+time = latest_quake['time']
 
 print("-" * 20)
 print(f" 발생위치: {place}")
@@ -25,7 +26,13 @@ if mag >= 5.0:
 
 if 3.0 < mag < 5.0:
     print("[주의] 중간 규모 지진입니다. 주의가 필요합니다.")
-    
+
 if mag <= 3.0:
     print("[안전] 미세한 진동입니다. 일상 생활이 가능합니다.")
     
+# 4. 지진이 발생할 때 마다 파일에 기록하기
+with open("report.txt", "a", encoding="utf-8") as file: # open()는 파일을 다룰 때 사용 하는 함수
+    file.write(f"--- 지진 감지 기록 ---\n")
+    file.write(f"발생위치: {place}\n")
+    file.write(f"규모: {mag}\n")
+    file.write(f"발생시간: {time}\n")
