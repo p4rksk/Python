@@ -1,10 +1,13 @@
-agent_bag = ["웹 검색", "웹 개발", "자동화"]
+import requests
+from urllib3 import request
 
-def work_agent(work_name):
-    if work_name in agent_bag:
-        print(f"{work_name} 작업 하겠습니다.")
-    else:
-        print(f"{work_name}이 리스트에 없어 작업을 할 수 없습니다.")
 
-work_agent("자동화")
+# 구글 서버 접속 시도
+response = requests.get("https://www.google.com")
 
+# 결과
+if response.status_code == 200:
+    print("구글 서버 접속 성공!")
+    print(f"가져온 데이터: {response.text[:100]}") # 일부 데이터 가져오기
+else:
+    print("연결에 실패했습니다.")
