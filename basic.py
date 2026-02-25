@@ -38,3 +38,11 @@ response = client.models.generate_content(
 print("=" * 40)
 print(response.text)
 print("=" * 40)
+
+# 6. 결과 파일로 기록하기
+filename = "earthquake_report.txt"
+
+with open(filename, "w", encoding="utf-8") as file: # 파일이름, 모드, 인코딩 방식 순서로 작성한다.
+    file.write("--- AI 지진 분석 보고서 ---\n")
+    file.write(response.text)
+    file.write("\n\n")

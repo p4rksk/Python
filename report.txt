@@ -1,8 +1,0 @@
---- 지진 감지 기록 ---
-발생위치: 4 km SSW of Point Possession, Alaska
-규모: 1.5
-발생시간: 1771921297080
---- 지진 감지 기록 ---
-발생위치: 4 km SSW of Point Possession, Alaska
-규모: 1.5
-발생시간: 1771921297080
